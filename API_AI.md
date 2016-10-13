@@ -31,7 +31,7 @@
         "code": 200
     }
 }
-
+{'status': {'code': 200, 'errorType': 'success'}, 'timestamp': '2016-10-13T07:49:21.419Z', 'sessionId': '81e229ed-d013-4b19-9ef6-7b1cdd5827d9', 'result': {'source': 'agent', 'score': 1.0, 'speech': '', 'fulfillment': {'speech': ''}, 'actionIncomplete': False, 'action': 'yahooWeatherForecast', 'resolvedQuery': 'weather in London', 'parameters': {'geo-city': 'London'}, 'contexts': [], 'metadata': {'intentId': '471fd4d3-d755-40ac-bcb7-85f01c404f57', 'intentName': 'weather', 'webhookUsed': 'true'}}, 'id': 'f9c03e3b-97b3-4d38-b2ca-d83b0598d5d2', 'originalRequest': None}
 
 ## Response From My server To Api.AI
 Today in London: Showers, the temperature is 50 F

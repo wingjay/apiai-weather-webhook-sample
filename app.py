@@ -41,12 +41,20 @@ def processRequest(req):
         return {}
     baseurl = "https://query.yahooapis.com/v1/public/yql?"
     yql_query = makeYqlQuery(req)
+    # "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='London')"
     if yql_query is None:
         return {}
     yql_url = baseurl + urllib.urlencode({'q': yql_query}) + "&format=json"
+    # 'https://query.yahooapis.com/v1/public/yql?q=select+%2A+from+weather.forecast+where+woeid+in+%28select+woeid+from+geo.places%281%29+where+text%3D%27London%27%29&format=json'
     result = urllib.urlopen(yql_url).read()
     data = json.loads(result)
     res = makeWebhookResult(data)
+    ''' {
+            'displayText': u'Today in London: Showers, the temperature is 50 F',
+            'source': 'wingjay-github-apiai-weather-webhook-sample',
+            'speech': u'Today in London: Showers, the temperature is 50 F'
+        }
+    '''
     return res
 
 
